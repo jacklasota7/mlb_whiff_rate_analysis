@@ -33,6 +33,10 @@ def main() -> None:
         valid_pitchers = pitch_counts[pitch_counts >= MIN_PITCHES].index
         df = df[df["pitcher"].isin(valid_pitchers)]
 
+    # write cleaned data to parquet file
+    Path(CLEANED_DATA).parent.mkdir(parents=True, exist_ok=True)
+    df.to_parquet(CLEANED_DATA, index=False)
+
     # print outputted filtered data
     print("Wrote:", CLEANED_DATA)
     print("Shape:", df.shape)
