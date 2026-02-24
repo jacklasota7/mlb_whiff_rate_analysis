@@ -1,2 +1,2 @@
 # mlb_whiff_rate_analysis
-How horizontal pitch movement relates to whiff rate across different pitch types for MLB pitchers in 2025.
+How horizontal pitch movement relates to whiff rate across pitch types based off MLB pitchers data in 2024.
