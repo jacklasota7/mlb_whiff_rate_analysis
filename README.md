@@ -1,4 +1,5 @@
 # mlb_whiff_rate_analysis
+<<<<<<< HEAD
 
 Analysis of how horizontal pitch movement relates to whiff rate across different pitch types for MLB pitchers in the 2024 season.
 
@@ -165,3 +166,6 @@ This project is still under active development. The data pipeline (Stages 1–3)
 **2025 and on data support** — the pipeline currently targets 2024; extending `pull_stats.py` to accept a `--year` argument that pulls any season, as well as actively pulls the 2026 season.
 
 **Lefty/righty splits** — `pfx_x` is signed relative to the catcher's perspective, so movement profiles differ by pitcher handedness; the analysis will account for this.
+=======
+How horizontal pitch movement relates to whiff rate across pitch types based off MLB pitchers data in 2024.
+>>>>>>> 05a3f0dcb937b609c49bfeb47007b04eecdeb2d2
