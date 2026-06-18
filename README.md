@@ -48,7 +48,7 @@ pip install -r requirements.txt
 
 The project runs as a three stage pipeline. Each script is independent and can be re-run individually.
 
-### Stage 1 — Pull Raw Data (`pull_stats.py`)
+### Stage 1: Pull Raw Data (`pull_stats.py`)
 
 Downloads every Statcast pitch from the 2024 MLB regular season (March 28 – September 29) via `pybaseball` and saves them to a Parquet file.
 
@@ -70,7 +70,7 @@ After saving, the script prints a preview of key columns, including the top pitc
 
 ---
 
-### Stage 2 — Preprocess (`preprocess.py`)
+### Stage 2: Preprocess (`preprocess.py`)
 
 Reads the raw parquet and applies a sequence of filters to produce a clean dataset ready for analysis.
 
@@ -94,7 +94,7 @@ The output directory gets created automatically if it doesn't exist. The script 
 
 ---
 
-### Stage 3 — Metric Labeling (`metrics.py`)
+### Stage 3: Metric Labeling (`metrics.py`)
 
 Defines swing and whiff events and exposes a labeling function that adds boolean columns to any pitch-level DataFrame.
 
@@ -154,15 +154,15 @@ The `data/` directory is excluded from version control. Run `pull_stats.py` to r
 
 This project is still under active development. The data pipeline (Stages 1–3) are complete. What comes next:
 
-**Whiff rate calculation** — aggregate `is_swing` and `is_whiff` labels from `metrics.py` up to the pitcher × pitch type level to compute whiff rates per individual pitchers.
+**Whiff rate calculation** —> aggregate `is_swing` and `is_whiff` labels from `metrics.py` up to the pitcher × pitch type level to compute whiff rates per individual pitchers.
 
-**Exploratory analysis** — scatter plots and distributions of horizontal movement (`pfx_x`) vs. whiff rate, broken out by pitch type and handedness (`p_throws`).
+**Exploratory analysis** —> scatter plots and distributions of horizontal movement (`pfx_x`) vs. whiff rate, broken out by pitch type and handedness (`p_throws`).
 
-**Statistical modeling** — regression or correlation analysis to quantify the relationship between horizontal break and whiff rate, controlling for pitch velocity and pitch type.
+**Statistical modeling** —> regression or correlation analysis to quantify the relationship between horizontal break and whiff rate, controlling for pitch velocity and pitch type.
 
-**Visualization layer** — publication-ready plots using `matplotlib`, likely one chart per major pitch type showing the movement-whiff curve.
+**Visualization layer** —> output plots using `matplotlib`, likely one chart per major pitch type showing the movement-whiff curve.
 
-**2025 and on data support** — the pipeline currently targets 2024; extending `pull_stats.py` to accept a `--year` argument that pulls any season, as well as actively pulls the 2026 season.
+**2025 and on data support** —> the pipeline currently targets 2024; extending `pull_stats.py` to accept a `--year` argument that pulls any season, as well as actively pulls the 2026 season.
 
-**Lefty/righty splits** — `pfx_x` is signed relative to the catcher's perspective, so movement profiles differ by pitcher handedness; the analysis will account for this.
+**Lefty/righty splits** —> `pfx_x` is signed relative to the catcher's perspective, so movement profiles differ by pitcher handedness; the analysis will account for this.
 
